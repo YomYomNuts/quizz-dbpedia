@@ -1,0 +1,286 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		CEBA058E16CFB3F80043AEE1 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CEBA058D16CFB3F80043AEE1 /* UIKit.framework */; };
+		CEBA059016CFB3F80043AEE1 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CEBA058F16CFB3F80043AEE1 /* Foundation.framework */; };
+		CEBA059216CFB3F80043AEE1 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CEBA059116CFB3F80043AEE1 /* CoreGraphics.framework */; };
+		CEBA059416CFB3F80043AEE1 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CEBA059316CFB3F80043AEE1 /* CoreData.framework */; };
+		CEBA059A16CFB3F80043AEE1 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = CEBA059816CFB3F80043AEE1 /* InfoPlist.strings */; };
+		CEBA059C16CFB3F80043AEE1 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = CEBA059B16CFB3F80043AEE1 /* main.m */; };
+		CEBA05A016CFB3F80043AEE1 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = CEBA059F16CFB3F80043AEE1 /* AppDelegate.m */; };
+		CEBA05A316CFB3F80043AEE1 /* quizz_dbpedia.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = CEBA05A116CFB3F80043AEE1 /* quizz_dbpedia.xcdatamodeld */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		CEBA058916CFB3F80043AEE1 /* quizz-dbpedia.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "quizz-dbpedia.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		CEBA058D16CFB3F80043AEE1 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		CEBA058F16CFB3F80043AEE1 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		CEBA059116CFB3F80043AEE1 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		CEBA059316CFB3F80043AEE1 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		CEBA059716CFB3F80043AEE1 /* quizz-dbpedia-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "quizz-dbpedia-Info.plist"; sourceTree = "<group>"; };
+		CEBA059916CFB3F80043AEE1 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		CEBA059B16CFB3F80043AEE1 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		CEBA059D16CFB3F80043AEE1 /* quizz-dbpedia-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "quizz-dbpedia-Prefix.pch"; sourceTree = "<group>"; };
+		CEBA059E16CFB3F80043AEE1 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		CEBA059F16CFB3F80043AEE1 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		CEBA05A216CFB3F80043AEE1 /* quizz_dbpedia.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = quizz_dbpedia.xcdatamodel; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		CEBA058616CFB3F80043AEE1 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CEBA058E16CFB3F80043AEE1 /* UIKit.framework in Frameworks */,
+				CEBA059016CFB3F80043AEE1 /* Foundation.framework in Frameworks */,
+				CEBA059216CFB3F80043AEE1 /* CoreGraphics.framework in Frameworks */,
+				CEBA059416CFB3F80043AEE1 /* CoreData.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		CEBA057E16CFB3F80043AEE1 = {
+			isa = PBXGroup;
+			children = (
+				CEBA059516CFB3F80043AEE1 /* quizz-dbpedia */,
+				CEBA058C16CFB3F80043AEE1 /* Frameworks */,
+				CEBA058A16CFB3F80043AEE1 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		CEBA058A16CFB3F80043AEE1 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				CEBA058916CFB3F80043AEE1 /* quizz-dbpedia.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		CEBA058C16CFB3F80043AEE1 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				CEBA058D16CFB3F80043AEE1 /* UIKit.framework */,
+				CEBA058F16CFB3F80043AEE1 /* Foundation.framework */,
+				CEBA059116CFB3F80043AEE1 /* CoreGraphics.framework */,
+				CEBA059316CFB3F80043AEE1 /* CoreData.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		CEBA059516CFB3F80043AEE1 /* quizz-dbpedia */ = {
+			isa = PBXGroup;
+			children = (
+				CEBA059E16CFB3F80043AEE1 /* AppDelegate.h */,
+				CEBA059F16CFB3F80043AEE1 /* AppDelegate.m */,
+				CEBA05A116CFB3F80043AEE1 /* quizz_dbpedia.xcdatamodeld */,
+				CEBA059616CFB3F80043AEE1 /* Supporting Files */,
+			);
+			path = "quizz-dbpedia";
+			sourceTree = "<group>";
+		};
+		CEBA059616CFB3F80043AEE1 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				CEBA059716CFB3F80043AEE1 /* quizz-dbpedia-Info.plist */,
+				CEBA059816CFB3F80043AEE1 /* InfoPlist.strings */,
+				CEBA059B16CFB3F80043AEE1 /* main.m */,
+				CEBA059D16CFB3F80043AEE1 /* quizz-dbpedia-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		CEBA058816CFB3F80043AEE1 /* quizz-dbpedia */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CEBA05A616CFB3F80043AEE1 /* Build configuration list for PBXNativeTarget "quizz-dbpedia" */;
+			buildPhases = (
+				CEBA058516CFB3F80043AEE1 /* Sources */,
+				CEBA058616CFB3F80043AEE1 /* Frameworks */,
+				CEBA058716CFB3F80043AEE1 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "quizz-dbpedia";
+			productName = "quizz-dbpedia";
+			productReference = CEBA058916CFB3F80043AEE1 /* quizz-dbpedia.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		CEBA058016CFB3F80043AEE1 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0430;
+			};
+			buildConfigurationList = CEBA058316CFB3F80043AEE1 /* Build configuration list for PBXProject "quizz-dbpedia" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = CEBA057E16CFB3F80043AEE1;
+			productRefGroup = CEBA058A16CFB3F80043AEE1 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				CEBA058816CFB3F80043AEE1 /* quizz-dbpedia */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		CEBA058716CFB3F80043AEE1 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CEBA059A16CFB3F80043AEE1 /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		CEBA058516CFB3F80043AEE1 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CEBA059C16CFB3F80043AEE1 /* main.m in Sources */,
+				CEBA05A016CFB3F80043AEE1 /* AppDelegate.m in Sources */,
+				CEBA05A316CFB3F80043AEE1 /* quizz_dbpedia.xcdatamodeld in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		CEBA059816CFB3F80043AEE1 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				CEBA059916CFB3F80043AEE1 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		CEBA05A416CFB3F80043AEE1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		CEBA05A516CFB3F80043AEE1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		CEBA05A716CFB3F80043AEE1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "quizz-dbpedia/quizz-dbpedia-Prefix.pch";
+				INFOPLIST_FILE = "quizz-dbpedia/quizz-dbpedia-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		CEBA05A816CFB3F80043AEE1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "quizz-dbpedia/quizz-dbpedia-Prefix.pch";
+				INFOPLIST_FILE = "quizz-dbpedia/quizz-dbpedia-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		CEBA058316CFB3F80043AEE1 /* Build configuration list for PBXProject "quizz-dbpedia" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CEBA05A416CFB3F80043AEE1 /* Debug */,
+				CEBA05A516CFB3F80043AEE1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		CEBA05A616CFB3F80043AEE1 /* Build configuration list for PBXNativeTarget "quizz-dbpedia" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CEBA05A716CFB3F80043AEE1 /* Debug */,
+				CEBA05A816CFB3F80043AEE1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		CEBA05A116CFB3F80043AEE1 /* quizz_dbpedia.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				CEBA05A216CFB3F80043AEE1 /* quizz_dbpedia.xcdatamodel */,
+			);
+			currentVersion = CEBA05A216CFB3F80043AEE1 /* quizz_dbpedia.xcdatamodel */;
+			path = quizz_dbpedia.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = CEBA058016CFB3F80043AEE1 /* Project object */;
+}
