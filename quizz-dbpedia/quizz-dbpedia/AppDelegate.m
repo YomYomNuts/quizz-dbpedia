@@ -7,6 +7,8 @@
 //
 
 #import "AppDelegate.h"
+#import "QuizzDBpediaViewController.h"
+
 
 @implementation AppDelegate
 
@@ -19,7 +21,9 @@
 {
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     // Override point for customization after application launch.
-    self.window.backgroundColor = [UIColor whiteColor];
+    UIViewController * vc = [[QuizzDBpediaViewController alloc] init];
+    self.window.rootViewController = [[UINavigationController alloc] initWithRootViewController:vc];
+    //self.window.backgroundColor = [UIColor whiteColor];
     [self.window makeKeyAndVisible];
     return YES;
 }
