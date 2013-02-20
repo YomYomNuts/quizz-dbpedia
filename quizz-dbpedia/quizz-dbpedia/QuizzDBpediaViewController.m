@@ -29,7 +29,7 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
     
-    NSString * query = @"select distinct ?film where {?film <http://dbpedia.org/ontology/starring> ?randomActorApp}";
+    NSString * query = @"select distinct ?movie where {?movie <http://dbpedia.org/ontology/starring> ?randomActorApp}";
     NSDictionary * jsonAnswer = [DBpediaFetcher executeQuery:query];
     
     NSLog(@"%@", jsonAnswer);

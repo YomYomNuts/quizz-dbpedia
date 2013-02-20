@@ -1,0 +1,31 @@
+﻿{
+	"themes":
+	[
+		{
+			"nameThemeFR": "Acteurs",
+			"nameThemeEN": "Actors",
+			"questions":
+			[
+				{
+					"subjectFR":"Dans quel film a joué ?nameActor?",
+					"subjectEN":"What movie played ?nameActor?",
+					"answerFR":"?nameMovie",
+					"answerEN":"?nameMovie",
+					"requestGoodAnswer":
+					{
+						"count":"select count(distinct ?nameMovie) where { ?movie rdf:type <http://dbpedia.org/ontology/Film>. ?movie <http://dbpedia.org/ontology/starring> ?randomActorApp. ?movie rdfs:label ?nameMovie. FILTER(LANGMATCHES(LANG(?nameMovie), 'en')) }",
+						"result":"select distinct ?nameMovie ?nameActor where { ?movie rdf:type <http://dbpedia.org/ontology/Film>. ?movie <http://dbpedia.org/ontology/starring> ?randomActorApp. ?movie rdfs:label ?nameMovie. ?randomActorApp rdfs:label ?nameActor. FILTER(LANGMATCHES(LANG(?nameActor), 'en') && LANGMATCHES(LANG(?nameMovie), 'en')) }"
+					},
+					"requestBadAnswer":
+					{
+						"count":"select count(distinct ?nameMovie) where { ?randomMovieApp rdf:type <http://dbpedia.org/ontology/Film>. ?randomMovieApp <http://dbpedia.org/ontology/starring> ?randomActorApp. ?randomMovieApp rdfs:label ?nameMovie. FILTER(LANGMATCHES(LANG(?nameMovie), 'en')) }",
+						"result":"select distinct ?nameMovie where { ?randomMovieApp rdf:type <http://dbpedia.org/ontology/Film>. ?randomMovieApp <http://dbpedia.org/ontology/starring> ?randomActorApp. ?randomMovieApp rdfs:label ?nameMovie. FILTER(LANGMATCHES(LANG(?nameMovie), 'en')) }",
+						"numberMinimalResults":0,
+						"numberMaximalResults":0,
+						"numberRequest":4
+					}
+				}
+			]
+		}
+	]
+}

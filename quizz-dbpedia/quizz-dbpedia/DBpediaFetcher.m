@@ -7,10 +7,13 @@
 //
 
 #import "DBpediaFetcher.h"
+#import "Theme.h"
+#import "Question.h"
 #import <stdlib.h>
 
 @implementation DBpediaFetcher
 
+static NSMutableArray* themes;
 static NSMutableArray* actors;
 static NSMutableArray* movies;
 
@@ -21,14 +24,12 @@ static NSMutableArray* movies;
 
 + (void) initialize
 {
-    if (actors == nil) {
-        actors = [[NSMutableArray alloc] init];
+    if (themes == nil)
+        [self getAllThemes];
+    if (actors == nil)
         [self getAllActors];
-    }
-    if (movies == nil) {
-        movies = [[NSMutableArray alloc] init];
+    if (movies == nil)
         [self getAllMovies];
-    }
 }
 
 + (NSDictionary *) DBpediaQuery:(NSString *)query
@@ -43,14 +44,53 @@ static NSMutableArray* movies;
     return [NSJSONSerialization JSONObjectWithData:[NSData dataWithContentsOfURL:url] options:NSJSONReadingAllowFragments error:nil];
 }
 
++ (void) getAllThemes
+{
+    NSString * absolutePathFile = [[NSBundle mainBundle] pathForResource:@"questionsDBpedia" ofType:@"json"];
+    NSData * data = [NSData dataWithContentsOfFile:absolutePathFile];
+    NSDictionary * dicThemes = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingAllowFragments error:nil];
+    NSArray * listThemes = [[dicThemes objectForKey:@"themes"] allObjects];
+    themes = nil;
+    themes = [[NSMutableArray alloc] init];
+    for (NSDictionary * themeDetails in listThemes)
+    {
+        Theme * theme = [[Theme alloc] init];
+        theme.nameThemeFR = [themeDetails objectForKey:@"nameThemeFR"];
+        theme.nameThemeEN = [themeDetails objectForKey:@"nameThemeEN"];
+        theme.allQuestions = [[NSMutableArray alloc] init];
+        
+        NSDictionary * dicQuestions = [themeDetails objectForKey:@"questions"];
+        for (NSDictionary * questionDetails in dicQuestions) {
+            Question * question = [[Question alloc] init];
+            question.subjectFR = [questionDetails objectForKey:@"subjectFR"];
+            question.subjectEN = [questionDetails objectForKey:@"subjectEN"];
+            question.answerFR = [questionDetails objectForKey:@"answerFR"];
+            question.answerEN = [questionDetails objectForKey:@"answerEN"];
+            
+            question.requestGoodAnswerCount = [[questionDetails objectForKey:@"requestGoodAnswer"] objectForKey:@"count"];
+            question.requestGoodAnswerResult = [[questionDetails objectForKey:@"requestGoodAnswer"] objectForKey:@"result"];
+            question.requestBadAnswerCount = [[questionDetails objectForKey:@"requestBadAnswer"] objectForKey:@"count"];
+            question.requestBadAnswerResult = [[questionDetails objectForKey:@"requestBadAnswer"] objectForKey:@"result"];
+            question.numberMinimalResults = [[[questionDetails objectForKey:@"requestBadAnswer"] objectForKey:@"numberMinimalResults"] integerValue];
+            question.numberMaximalResults = [[[questionDetails objectForKey:@"requestBadAnswer"] objectForKey:@"numberMaximalResults"] integerValue];
+            question.numberRequest = [[[questionDetails objectForKey:@"requestBadAnswer"] objectForKey:@"numberRequest"] integerValue];
+            
+            [theme.allQuestions addObject:question];
+        }
+        
+        [themes addObject:theme];
+    }
+}
+
 + (void) getAllActors
 {
     NSString * absolutePathFile = [[NSBundle mainBundle] pathForResource:@"allActors" ofType:@"json"];
     NSData * data = [NSData dataWithContentsOfFile:absolutePathFile];
     NSDictionary * dicActors = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingAllowFragments error:nil];
-    NSArray * listActor = [[[dicActors objectForKey:@"results"] objectForKey:@"bindings"] allObjects];
-    actors = [[NSMutableArray alloc]init];
-    for (NSDictionary * actorDetails in listActor)
+    NSArray * listActors = [[[dicActors objectForKey:@"results"] objectForKey:@"bindings"] allObjects];
+    actors = nil;
+    actors = [[NSMutableArray alloc] init];
+    for (NSDictionary * actorDetails in listActors)
     {
         [actors addObject:[[actorDetails objectForKey:@"actor"] objectForKey:@"value"]];
     }
@@ -62,7 +102,8 @@ static NSMutableArray* movies;
     NSData * data = [NSData dataWithContentsOfFile:absolutePathFile];
     NSDictionary * dicMovies = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingAllowFragments error:nil];
     NSArray * listMovie = [[[dicMovies objectForKey:@"results"] objectForKey:@"bindings"] allObjects];
-    movies = [[NSMutableArray alloc]init];
+    movies = nil;
+    movies = [[NSMutableArray alloc] init];
     for (NSDictionary * movieDetails in listMovie)
     {
         [movies addObject:[[movieDetails objectForKey:@"movie"] objectForKey:@"value"]];
