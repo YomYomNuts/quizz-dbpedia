@@ -17,10 +17,13 @@
 // Return a plist what contains all results of the query
 + (NSDictionary *) executeQuery:(NSString *)query;
 
-// Return an array what contains all actors
+// Initialize the static var themes with the file match
++ (void) getAllThemes;
+
+// Initialize the static var actors with the file match
 + (void) getAllActors;
 
-// Return an array what contains all movies
+// Initialize the static var movies with the file match
 + (void) getAllMovies;
 
 @end
