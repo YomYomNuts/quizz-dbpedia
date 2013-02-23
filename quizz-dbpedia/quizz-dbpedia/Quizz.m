@@ -17,8 +17,10 @@
 #define kKeywordMovie2      @"?randomMovie2App"
 #define kMaximumBadAnswers  3
 
+// Return a QuestionQuizz random of a theme
 + (QuestionQuizz *) getQuestionTheme:(NSInteger) idTheme
 {
+    //Find a question
     Question * question = [[[DBpediaFetcher getAllThemes] objectAtIndex:idTheme] getRandomQuestion];
     QuestionQuizz * questionQuizz = [[QuestionQuizz alloc] init];
     
@@ -42,6 +44,7 @@
     NSArray * keys;
     NSInteger count = 0;
     
+    //Search the good parameters
     while (count < 1)
     {
         actor = [[DBpediaFetcher getAllActors] objectAtIndex:(arc4random() % [[DBpediaFetcher getAllActors] count])];
@@ -57,13 +60,14 @@
         }
     }
     
+    //Launch the query with the previous parameters
     query = [question.requestGoodAnswerResult stringByReplacingOccurrencesOfString:kKeywordActor withString:actor];
     query = [query stringByReplacingOccurrencesOfString:kKeywordMovie withString:movie];
     results = [DBpediaFetcher executeQuery:query];
     
     if ([results count] > 0)
     {
-        //Do the replacement
+        //If it's a good, we do the replacement
         keys = [[results objectAtIndex:0] allKeys];
         NSDictionary * resultSelected = [results objectAtIndex:(arc4random() % [results count])];
         for (NSString * key in keys)
@@ -79,10 +83,12 @@
             }
         }
         
+        // Now we search the bad answers
         NSInteger numberBadAnswer = 0;
         while (numberBadAnswer < question.numberRequest)
         {
             count = -1;
+            //Search the good parameters
             while (count < question.numberMinimalResults || (question.numberMaximalResults != -1 && count > question.numberMaximalResults))
             {
                 actor2 = [[DBpediaFetcher getAllActors] objectAtIndex:(arc4random() % [[DBpediaFetcher getAllActors] count])];
@@ -108,6 +114,7 @@
                 }
             }
             
+            //Launch the query with the previous parameters
             query = [question.requestBadAnswerResult stringByReplacingOccurrencesOfString:kKeywordActor withString:actor];
             query = [query stringByReplacingOccurrencesOfString:kKeywordActor2 withString:actor2];
             query = [query stringByReplacingOccurrencesOfString:kKeywordMovie withString:movie];
@@ -116,13 +123,13 @@
             
             if ([results count] > 0)
             {
+                //If it's a good, we do the replacement
                 keys = [[results objectAtIndex:0] allKeys];
                 if (question.numberRequest == 1)
                 {
                     numberBadAnswer = 0;
                     while (numberBadAnswer < kMaximumBadAnswers)
                     {
-                        //Do the replacement
                         NSDictionary * resultSelected = [results objectAtIndex:(arc4random() % [results count])];
                         NSString * varTempFR = [questionQuizz.badAnswersFR objectAtIndex:numberBadAnswer];
                         NSString * varTempEN = [questionQuizz.badAnswersEN objectAtIndex:numberBadAnswer];
@@ -131,6 +138,7 @@
                             varTempFR = [varTempFR stringByReplacingOccurrencesOfString:key withString:[resultSelected objectForKey:key]];
                             varTempEN = [varTempEN stringByReplacingOccurrencesOfString:key withString:[resultSelected objectForKey:key]];
                         }
+                        //Verify if we don't have this result
                         if ([questionQuizz.badAnswersFR indexOfObject:varTempFR] == NSNotFound)
                         {
                             [questionQuizz.badAnswersFR replaceObjectAtIndex:numberBadAnswer withObject:varTempFR];
@@ -141,7 +149,6 @@
                 }
                 else
                 {
-                    //Do the replacement
                     NSDictionary * resultSelected = [results objectAtIndex:(arc4random() % [results count])];
                     NSString * varTempFR = [questionQuizz.badAnswersFR objectAtIndex:numberBadAnswer];
                     NSString * varTempEN = [questionQuizz.badAnswersEN objectAtIndex:numberBadAnswer];
@@ -150,6 +157,7 @@
                         varTempFR = [varTempFR stringByReplacingOccurrencesOfString:key withString:[resultSelected objectForKey:key]];
                         varTempEN = [varTempEN stringByReplacingOccurrencesOfString:key withString:[resultSelected objectForKey:key]];
                     }
+                    //Verify if we don't have this result
                     if ([questionQuizz.badAnswersFR indexOfObject:varTempFR] == NSNotFound)
                     {
                         [questionQuizz.badAnswersFR replaceObjectAtIndex:numberBadAnswer withObject:varTempFR];

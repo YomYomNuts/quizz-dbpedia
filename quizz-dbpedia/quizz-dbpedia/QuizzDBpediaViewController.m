@@ -35,9 +35,10 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
     
+    //Generation of a question
     Theme * themeQuizz = [[DBpediaFetcher getAllThemes] objectAtIndex:0];
     questionQuizz = [Quizz getQuestionTheme:themeQuizz.idTheme];
-    
+    //Link with the UI
     [theme setTitle:themeQuizz.nameThemeFR];
     [question setText:questionQuizz.questionFR];
     [answerA setTitle:[questionQuizz.badAnswersFR objectAtIndex:1] forState:UIControlStateNormal];
@@ -65,6 +66,7 @@
 }
 
 - (IBAction)selectAnswer:(id)sender {
+    //Know if it's the good answer
     if ([sender currentTitle] == questionQuizz.goodAnswerFR)
     {
         UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Winner" message:@"You win!" delegate:self cancelButtonTitle:@"I know I know" otherButtonTitles:nil];
