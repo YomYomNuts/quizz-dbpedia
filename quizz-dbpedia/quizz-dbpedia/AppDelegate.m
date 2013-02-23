@@ -21,8 +21,7 @@
 {
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     // Override point for customization after application launch.
-    UIViewController * vc = [[QuizzDBpediaViewController alloc] init];
-    self.window.rootViewController = [[UINavigationController alloc] initWithRootViewController:vc];
+    self.window.rootViewController = [[QuizzDBpediaViewController alloc] init];
     //self.window.backgroundColor = [UIColor whiteColor];
     [self.window makeKeyAndVisible];
     return YES;

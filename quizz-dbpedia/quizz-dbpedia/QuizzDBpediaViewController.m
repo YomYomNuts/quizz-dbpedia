@@ -7,13 +7,19 @@
 //
 
 #import "QuizzDBpediaViewController.h"
-#import "DBpediaFetcher.h"
 
 @interface QuizzDBpediaViewController ()
 
 @end
 
 @implementation QuizzDBpediaViewController
+@synthesize theme;
+@synthesize question;
+@synthesize answerA;
+@synthesize answerB;
+@synthesize answerC;
+@synthesize answerD;
+@synthesize questionQuizz;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -29,14 +35,25 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
     
-    NSString * query = @"select distinct ?movie where {?movie <http://dbpedia.org/ontology/starring> ?randomActorApp}";
-    NSDictionary * jsonAnswer = [DBpediaFetcher executeQuery:query];
+    Theme * themeQuizz = [[DBpediaFetcher getAllThemes] objectAtIndex:0];
+    questionQuizz = [Quizz getQuestionTheme:themeQuizz.idTheme];
     
-    NSLog(@"%@", jsonAnswer);
+    [theme setTitle:themeQuizz.nameThemeFR];
+    [question setText:questionQuizz.questionFR];
+    [answerA setTitle:[questionQuizz.badAnswersFR objectAtIndex:1] forState:UIControlStateNormal];
+    [answerB setTitle:questionQuizz.goodAnswerFR forState:UIControlStateNormal];
+    [answerC setTitle:[questionQuizz.badAnswersFR objectAtIndex:2] forState:UIControlStateNormal];
+    [answerD setTitle:[questionQuizz.badAnswersFR objectAtIndex:0] forState:UIControlStateNormal];
 }
 
 - (void)viewDidUnload
 {
+    [self setTheme:nil];
+    [self setQuestion:nil];
+    [self setAnswerA:nil];
+    [self setAnswerB:nil];
+    [self setAnswerC:nil];
+    [self setAnswerD:nil];
     [super viewDidUnload];
     // Release any retained subviews of the main view.
     // e.g. self.myOutlet = nil;
@@ -45,6 +62,19 @@
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
 {
     return (interfaceOrientation == UIInterfaceOrientationPortrait);
+}
+
+- (IBAction)selectAnswer:(id)sender {
+    if ([sender currentTitle] == questionQuizz.goodAnswerFR)
+    {
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Winner" message:@"You win!" delegate:self cancelButtonTitle:@"I know I know" otherButtonTitles:nil];
+        [alert show];
+    }
+    else
+    {
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Loser" message:@"Try again!" delegate:self cancelButtonTitle:@"OK..." otherButtonTitles:nil];
+        [alert show];
+    }
 }
 
 @end

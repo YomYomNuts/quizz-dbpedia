@@ -7,11 +7,15 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "Question.h"
 
 @interface Theme : NSObject
 
+@property(assign) NSInteger idTheme;
 @property(strong) NSString * nameThemeFR;
 @property(strong) NSString * nameThemeEN;
 @property(strong) NSMutableArray * allQuestions;
+
+- (Question *) getRandomQuestion;
 
 @end

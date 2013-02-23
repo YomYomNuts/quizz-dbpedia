@@ -7,11 +7,18 @@
 //
 
 #import "Theme.h"
+#import <stdlib.h>
 
 @implementation Theme
 
+@synthesize idTheme;
 @synthesize nameThemeFR;
 @synthesize nameThemeEN;
 @synthesize allQuestions;
+
+- (Question *) getRandomQuestion
+{
+    return [self.allQuestions objectAtIndex:(arc4random() % [self.allQuestions count])];
+}
 
 @end

@@ -9,20 +9,22 @@
 				{
 					"subjectFR":"Dans quel film a joué ?nameActor?",
 					"subjectEN":"What movie played ?nameActor?",
-					"answerFR":"?nameMovie",
-					"answerEN":"?nameMovie",
+					"goodAnswerFR":"?nameMovie",
+					"goodAnswerEN":"?nameMovie",
+					"badAnswerFR":"?nameBadMovie",
+					"badAnswerEN":"?nameBadMovie",
 					"requestGoodAnswer":
 					{
-						"count":"select count(distinct ?nameMovie) where { ?movie rdf:type <http://dbpedia.org/ontology/Film>. ?movie <http://dbpedia.org/ontology/starring> ?randomActorApp. ?movie rdfs:label ?nameMovie. FILTER(LANGMATCHES(LANG(?nameMovie), 'en')) }",
-						"result":"select distinct ?nameMovie ?nameActor where { ?movie rdf:type <http://dbpedia.org/ontology/Film>. ?movie <http://dbpedia.org/ontology/starring> ?randomActorApp. ?movie rdfs:label ?nameMovie. ?randomActorApp rdfs:label ?nameActor. FILTER(LANGMATCHES(LANG(?nameActor), 'en') && LANGMATCHES(LANG(?nameMovie), 'en')) }"
+						"count":"select count(distinct ?movie) where { ?movie rdf:type <http://dbpedia.org/ontology/Film>. ?movie <http://dbpedia.org/ontology/starring> <?randomActorApp>. }",
+						"result":"select distinct ?nameMovie ?nameActor where { ?movie rdf:type <http://dbpedia.org/ontology/Film>. ?movie <http://dbpedia.org/ontology/starring> <?randomActorApp>. ?movie rdfs:label ?nameMovie. <?randomActorApp> rdfs:label ?nameActor. FILTER(LANGMATCHES(LANG(?nameActor), 'en') && LANGMATCHES(LANG(?nameMovie), 'en')) }"
 					},
 					"requestBadAnswer":
 					{
-						"count":"select count(distinct ?nameMovie) where { ?randomMovieApp rdf:type <http://dbpedia.org/ontology/Film>. ?randomMovieApp <http://dbpedia.org/ontology/starring> ?randomActorApp. ?randomMovieApp rdfs:label ?nameMovie. FILTER(LANGMATCHES(LANG(?nameMovie), 'en')) }",
-						"result":"select distinct ?nameMovie where { ?randomMovieApp rdf:type <http://dbpedia.org/ontology/Film>. ?randomMovieApp <http://dbpedia.org/ontology/starring> ?randomActorApp. ?randomMovieApp rdfs:label ?nameMovie. FILTER(LANGMATCHES(LANG(?nameMovie), 'en')) }",
+						"count":"select count(distinct ?nameBadMovie) where { <?randomMovie2App> rdf:type <http://dbpedia.org/ontology/Film>. <?randomMovie2App> <http://dbpedia.org/ontology/starring> <?randomActorApp>. }",
+						"result":"select distinct ?nameBadMovie where { <?randomMovie2App> rdf:type <http://dbpedia.org/ontology/Film>. <?randomMovie2App> rdfs:label ?nameBadMovie. FILTER(LANGMATCHES(LANG(?nameBadMovie), 'en')) }",
 						"numberMinimalResults":0,
 						"numberMaximalResults":0,
-						"numberRequest":4
+						"numberRequest":3
 					}
 				}
 			]
