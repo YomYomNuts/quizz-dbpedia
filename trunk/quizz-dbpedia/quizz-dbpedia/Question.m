@@ -12,8 +12,10 @@
 
 @synthesize subjectFR;
 @synthesize subjectEN;
-@synthesize answerFR;
-@synthesize answerEN;
+@synthesize goodAnswerFR;
+@synthesize goodAnswerEN;
+@synthesize badAnswerFR;
+@synthesize badAnswerEN;
 @synthesize requestGoodAnswerCount;
 @synthesize requestGoodAnswerResult;
 @synthesize requestBadAnswerCount;

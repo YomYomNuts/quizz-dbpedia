@@ -10,20 +10,20 @@
 #import <Foundation/Foundation.h>
 
 // Turn this value to YES to enable the log messages
-#define kDBpediaFetcherLogEnabled              YES
+#define kDBpediaFetcherLogEnabled   NO
 
 @interface DBpediaFetcher : NSObject
 
-// Return a plist what contains all results of the query
-+ (NSDictionary *) executeQuery:(NSString *)query;
+// Return an array what contains all results of the query
++ (NSMutableArray *) executeQuery:(NSString *)query;
 
-// Initialize the static var themes with the file match
-+ (void) getAllThemes;
+// Return an array what contains all themes
++ (NSMutableArray *) getAllThemes;
 
-// Initialize the static var actors with the file match
-+ (void) getAllActors;
+// Return an array what contains all actors
++ (NSMutableArray *) getAllActors;
 
-// Initialize the static var movies with the file match
-+ (void) getAllMovies;
+// Return an array what contains all movies
++ (NSMutableArray *) getAllMovies;
 
 @end

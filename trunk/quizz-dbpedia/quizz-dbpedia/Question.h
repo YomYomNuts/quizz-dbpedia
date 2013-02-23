@@ -12,8 +12,10 @@
 
 @property(strong) NSString * subjectFR;
 @property(strong) NSString * subjectEN;
-@property(strong) NSString * answerFR;
-@property(strong) NSString * answerEN;
+@property(strong) NSString * goodAnswerFR;
+@property(strong) NSString * goodAnswerEN;
+@property(strong) NSString * badAnswerFR;
+@property(strong) NSString * badAnswerEN;
 @property(strong) NSString * requestGoodAnswerCount;
 @property(strong) NSString * requestGoodAnswerResult;
 @property(strong) NSString * requestBadAnswerCount;
