@@ -14,6 +14,7 @@
 
 @interface Quizz : NSObject
 
+// Return a QuestionQuizz random of a theme
 + (QuestionQuizz *) getQuestionTheme:(NSInteger) idTheme;
 
 @end

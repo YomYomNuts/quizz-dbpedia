@@ -16,6 +16,7 @@
 @synthesize nameThemeEN;
 @synthesize allQuestions;
 
+// Get a random question of the theme
 - (Question *) getRandomQuestion
 {
     return [self.allQuestions objectAtIndex:(arc4random() % [self.allQuestions count])];

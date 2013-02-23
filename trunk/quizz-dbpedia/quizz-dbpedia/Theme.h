@@ -16,6 +16,7 @@
 @property(strong) NSString * nameThemeEN;
 @property(strong) NSMutableArray * allQuestions;
 
+// Get a random question of the theme
 - (Question *) getRandomQuestion;
 
 @end
