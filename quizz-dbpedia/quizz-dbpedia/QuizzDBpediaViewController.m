@@ -79,4 +79,17 @@
     }
 }
 
+- (IBAction)refresh:(id)sender {
+    //Generation of a question
+    Theme * themeQuizz = [[DBpediaFetcher getAllThemes] objectAtIndex:0];
+    questionQuizz = [Quizz getQuestionTheme:themeQuizz.idTheme];
+    //Link with the UI
+    [theme setTitle:themeQuizz.nameThemeFR];
+    [question setText:questionQuizz.questionFR];
+    [answerA setTitle:[questionQuizz.badAnswersFR objectAtIndex:1] forState:UIControlStateNormal];
+    [answerB setTitle:questionQuizz.goodAnswerFR forState:UIControlStateNormal];
+    [answerC setTitle:[questionQuizz.badAnswersFR objectAtIndex:2] forState:UIControlStateNormal];
+    [answerD setTitle:[questionQuizz.badAnswersFR objectAtIndex:0] forState:UIControlStateNormal];
+}
+
 @end
