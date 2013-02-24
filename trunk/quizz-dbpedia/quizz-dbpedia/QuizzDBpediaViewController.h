@@ -18,6 +18,7 @@
 @property (weak, nonatomic) IBOutlet UIButton *answerC;
 @property (weak, nonatomic) IBOutlet UIButton *answerD;
 
+- (IBAction)refresh:(id)sender;
 - (IBAction)selectAnswer:(id)sender;
 
 
