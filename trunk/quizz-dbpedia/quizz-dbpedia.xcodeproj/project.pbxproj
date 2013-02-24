@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CEA57DA516D81AD800481413 /* QuestionQuizz.m in Sources */ = {isa = PBXBuildFile; fileRef = CEA57DA416D81AD800481413 /* QuestionQuizz.m */; };
 		CEBA058E16CFB3F80043AEE1 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CEBA058D16CFB3F80043AEE1 /* UIKit.framework */; };
 		CEBA059016CFB3F80043AEE1 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CEBA058F16CFB3F80043AEE1 /* Foundation.framework */; };
 		CEBA059216CFB3F80043AEE1 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CEBA059116CFB3F80043AEE1 /* CoreGraphics.framework */; };
@@ -15,9 +16,20 @@
 		CEBA059C16CFB3F80043AEE1 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = CEBA059B16CFB3F80043AEE1 /* main.m */; };
 		CEBA05A016CFB3F80043AEE1 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = CEBA059F16CFB3F80043AEE1 /* AppDelegate.m */; };
 		CEBA05A316CFB3F80043AEE1 /* quizz_dbpedia.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = CEBA05A116CFB3F80043AEE1 /* quizz_dbpedia.xcdatamodeld */; };
+		CED2AB6816CFEBB500A3DB2B /* QuizzDBpediaViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CED2AB6616CFEBB500A3DB2B /* QuizzDBpediaViewController.m */; };
+		CED2AB6916CFEBB500A3DB2B /* QuizzDBpediaViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CED2AB6716CFEBB500A3DB2B /* QuizzDBpediaViewController.xib */; };
+		CED2AB6F16CFFAFE00A3DB2B /* DBpediaFetcher.m in Sources */ = {isa = PBXBuildFile; fileRef = CED2AB6E16CFFAFE00A3DB2B /* DBpediaFetcher.m */; };
+		CED2AB7C16D423F000A3DB2B /* allMovies.json in Resources */ = {isa = PBXBuildFile; fileRef = CED2AB7916D423F000A3DB2B /* allMovies.json */; };
+		CED2AB7D16D423F000A3DB2B /* questionsDBpedia.json in Resources */ = {isa = PBXBuildFile; fileRef = CED2AB7A16D423F000A3DB2B /* questionsDBpedia.json */; };
+		CED2AB7E16D423F000A3DB2B /* allActors.json in Resources */ = {isa = PBXBuildFile; fileRef = CED2AB7B16D423F000A3DB2B /* allActors.json */; };
+		CED2AB8116D4299300A3DB2B /* Theme.m in Sources */ = {isa = PBXBuildFile; fileRef = CED2AB8016D4299300A3DB2B /* Theme.m */; };
+		CED2AB8416D429A900A3DB2B /* Question.m in Sources */ = {isa = PBXBuildFile; fileRef = CED2AB8316D429A900A3DB2B /* Question.m */; };
+		CED2AB8716D58CE200A3DB2B /* Quizz.m in Sources */ = {isa = PBXBuildFile; fileRef = CED2AB8616D58CE200A3DB2B /* Quizz.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		CEA57DA316D81AD800481413 /* QuestionQuizz.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QuestionQuizz.h; sourceTree = "<group>"; };
+		CEA57DA416D81AD800481413 /* QuestionQuizz.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QuestionQuizz.m; sourceTree = "<group>"; };
 		CEBA058916CFB3F80043AEE1 /* quizz-dbpedia.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "quizz-dbpedia.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		CEBA058D16CFB3F80043AEE1 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		CEBA058F16CFB3F80043AEE1 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -30,6 +42,20 @@
 		CEBA059E16CFB3F80043AEE1 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		CEBA059F16CFB3F80043AEE1 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		CEBA05A216CFB3F80043AEE1 /* quizz_dbpedia.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = quizz_dbpedia.xcdatamodel; sourceTree = "<group>"; };
+		CED2AB6516CFEBB500A3DB2B /* QuizzDBpediaViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QuizzDBpediaViewController.h; sourceTree = "<group>"; };
+		CED2AB6616CFEBB500A3DB2B /* QuizzDBpediaViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QuizzDBpediaViewController.m; sourceTree = "<group>"; };
+		CED2AB6716CFEBB500A3DB2B /* QuizzDBpediaViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = QuizzDBpediaViewController.xib; sourceTree = "<group>"; };
+		CED2AB6D16CFFAFE00A3DB2B /* DBpediaFetcher.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DBpediaFetcher.h; sourceTree = "<group>"; };
+		CED2AB6E16CFFAFE00A3DB2B /* DBpediaFetcher.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DBpediaFetcher.m; sourceTree = "<group>"; };
+		CED2AB7916D423F000A3DB2B /* allMovies.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = allMovies.json; sourceTree = "<group>"; };
+		CED2AB7A16D423F000A3DB2B /* questionsDBpedia.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = questionsDBpedia.json; sourceTree = "<group>"; };
+		CED2AB7B16D423F000A3DB2B /* allActors.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = allActors.json; sourceTree = "<group>"; };
+		CED2AB7F16D4299300A3DB2B /* Theme.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Theme.h; sourceTree = "<group>"; };
+		CED2AB8016D4299300A3DB2B /* Theme.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Theme.m; sourceTree = "<group>"; };
+		CED2AB8216D429A900A3DB2B /* Question.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Question.h; sourceTree = "<group>"; };
+		CED2AB8316D429A900A3DB2B /* Question.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Question.m; sourceTree = "<group>"; };
+		CED2AB8516D58CE100A3DB2B /* Quizz.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Quizz.h; sourceTree = "<group>"; };
+		CED2AB8616D58CE200A3DB2B /* Quizz.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Quizz.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -50,6 +76,7 @@
 		CEBA057E16CFB3F80043AEE1 = {
 			isa = PBXGroup;
 			children = (
+				CED2AB7616D121E600A3DB2B /* Ressources */,
 				CEBA059516CFB3F80043AEE1 /* quizz-dbpedia */,
 				CEBA058C16CFB3F80043AEE1 /* Frameworks */,
 				CEBA058A16CFB3F80043AEE1 /* Products */,
@@ -81,6 +108,19 @@
 				CEBA059E16CFB3F80043AEE1 /* AppDelegate.h */,
 				CEBA059F16CFB3F80043AEE1 /* AppDelegate.m */,
 				CEBA05A116CFB3F80043AEE1 /* quizz_dbpedia.xcdatamodeld */,
+				CED2AB6516CFEBB500A3DB2B /* QuizzDBpediaViewController.h */,
+				CED2AB6616CFEBB500A3DB2B /* QuizzDBpediaViewController.m */,
+				CED2AB6716CFEBB500A3DB2B /* QuizzDBpediaViewController.xib */,
+				CED2AB6D16CFFAFE00A3DB2B /* DBpediaFetcher.h */,
+				CED2AB6E16CFFAFE00A3DB2B /* DBpediaFetcher.m */,
+				CED2AB7F16D4299300A3DB2B /* Theme.h */,
+				CED2AB8016D4299300A3DB2B /* Theme.m */,
+				CED2AB8216D429A900A3DB2B /* Question.h */,
+				CED2AB8316D429A900A3DB2B /* Question.m */,
+				CED2AB8516D58CE100A3DB2B /* Quizz.h */,
+				CED2AB8616D58CE200A3DB2B /* Quizz.m */,
+				CEA57DA316D81AD800481413 /* QuestionQuizz.h */,
+				CEA57DA416D81AD800481413 /* QuestionQuizz.m */,
 				CEBA059616CFB3F80043AEE1 /* Supporting Files */,
 			);
 			path = "quizz-dbpedia";
@@ -95,6 +135,16 @@
 				CEBA059D16CFB3F80043AEE1 /* quizz-dbpedia-Prefix.pch */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		CED2AB7616D121E600A3DB2B /* Ressources */ = {
+			isa = PBXGroup;
+			children = (
+				CED2AB7916D423F000A3DB2B /* allMovies.json */,
+				CED2AB7A16D423F000A3DB2B /* questionsDBpedia.json */,
+				CED2AB7B16D423F000A3DB2B /* allActors.json */,
+			);
+			name = Ressources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -148,6 +198,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				CEBA059A16CFB3F80043AEE1 /* InfoPlist.strings in Resources */,
+				CED2AB6916CFEBB500A3DB2B /* QuizzDBpediaViewController.xib in Resources */,
+				CED2AB7C16D423F000A3DB2B /* allMovies.json in Resources */,
+				CED2AB7D16D423F000A3DB2B /* questionsDBpedia.json in Resources */,
+				CED2AB7E16D423F000A3DB2B /* allActors.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -161,6 +215,12 @@
 				CEBA059C16CFB3F80043AEE1 /* main.m in Sources */,
 				CEBA05A016CFB3F80043AEE1 /* AppDelegate.m in Sources */,
 				CEBA05A316CFB3F80043AEE1 /* quizz_dbpedia.xcdatamodeld in Sources */,
+				CED2AB6816CFEBB500A3DB2B /* QuizzDBpediaViewController.m in Sources */,
+				CED2AB6F16CFFAFE00A3DB2B /* DBpediaFetcher.m in Sources */,
+				CED2AB8116D4299300A3DB2B /* Theme.m in Sources */,
+				CED2AB8416D429A900A3DB2B /* Question.m in Sources */,
+				CED2AB8716D58CE200A3DB2B /* Quizz.m in Sources */,
+				CEA57DA516D81AD800481413 /* QuestionQuizz.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -232,6 +292,7 @@
 				GCC_PREFIX_HEADER = "quizz-dbpedia/quizz-dbpedia-Prefix.pch";
 				INFOPLIST_FILE = "quizz-dbpedia/quizz-dbpedia-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -243,6 +304,7 @@
 				GCC_PREFIX_HEADER = "quizz-dbpedia/quizz-dbpedia-Prefix.pch";
 				INFOPLIST_FILE = "quizz-dbpedia/quizz-dbpedia-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
@@ -266,6 +328,7 @@
 				CEBA05A816CFB3F80043AEE1 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
